@@ -17,4 +17,13 @@ class GameBoard{
         }
         return board
     }
+
+    placePiece(lat, long){ 
+        // if lat
+        for(let i = lat; i < lat+3; i++){
+        this.board[i][long].ship = true
+    }
+        return this.board
+        
+    }
 }
