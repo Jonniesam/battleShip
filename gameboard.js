@@ -26,4 +26,13 @@ class GameBoard{
         return this.board
         
     }
+
+    receiveAttack(lat, long){
+        const missle = this.board[lat][long]
+        if(missle.ship){
+            missle.hit = true
+            return 'Hit'
+        }
+        return 'Miss'
+    }
 }
