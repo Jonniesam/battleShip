@@ -1,0 +1,22 @@
+{
+  "name": "battleship",
+  "version": "1.0.0",
+  "description": "Battleship project (Odin Project)",
+  "main": "gameboard.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jonniesam/battleShip.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jonniesam/battleShip/issues"
+  },
+  "homepage": "https://github.com/Jonniesam/battleShip#readme",
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}
