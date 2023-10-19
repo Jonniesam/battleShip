@@ -20,10 +20,9 @@ class GameBoard{
         return board
     }
 
-    placePiece(lat, long){ 
-        // if lat
-        for(let i = lat; i < lat+3; i++){
-        this.board[i][long].ship = true
+    placePiece(lat, long, ship){ 
+        for(let i = lat; i < lat+ship.length; i++){
+            this.board[i][long].ship = ship
     }
         return this.board
         
@@ -32,9 +31,12 @@ class GameBoard{
     receiveAttack(lat, long){
         const missle = this.board[lat][long]
         if(missle.ship){
+            missle.ship.attack()
             missle.hit = true
             return 'Hit'
         }
+        missle.hit = 'miss'
         return 'Miss'
     }
 }
+
