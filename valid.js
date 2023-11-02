@@ -1,4 +1,4 @@
-export function ifLegal(lat, long, ship, board){
+export function validate(lat, long, ship, board){
     let i = lat
 
     while (i < lat + ship.length){
