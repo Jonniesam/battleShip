@@ -1,4 +1,4 @@
-const ship = require('./ship')
+import Ship from "./ship"
 
 class GameBoard{
     constructor(){
