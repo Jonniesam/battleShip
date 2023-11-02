@@ -1,4 +1,5 @@
 import Ship from "./ship"
+import { validate } from "./valid"
 
 class GameBoard{
     constructor(){
@@ -21,8 +22,13 @@ class GameBoard{
     }
 
     placePiece(lat, long, ship){ 
+        if(!validate(lat, long, ship, this.board)){
+            return 'Make a valid selection'
+        }
         for(let i = lat; i < lat+ship.length; i++){
+            if(this.board[i][long].ship === false){
             this.board[i][long].ship = ship
+        }
     }
         return this.board
         
@@ -31,9 +37,8 @@ class GameBoard{
     receiveAttack(lat, long){
         const missle = this.board[lat][long]
         if(missle.ship){
-            missle.ship.attack()
             missle.hit = true
-            return 'Hit'
+            return missle.ship.attack()
         }
         missle.hit = 'miss'
         return 'Miss'
