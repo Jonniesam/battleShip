@@ -4,14 +4,18 @@ class Ship{
         this.life = length
     }
     attack(){
+        if(this.life > 1){
+            this.life--
+            return 'Hit'
+        }
         this.life--
-        return 'Hit'
+        return 'Sunk'
     }
     isSunk(){
-        if(this.life > 0){
-            return false
+        if(this.life <= 0){
+            return true
         }
-        return true
+        return false
     }
 }
 
